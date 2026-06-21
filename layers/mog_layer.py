@@ -1,4 +1,4 @@
-from keras.engine.topology import Layer
+from keras import Layer
 from keras.layers import regularizers, initializers
 import keras.backend as K
 
