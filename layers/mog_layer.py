@@ -1,5 +1,5 @@
 from keras import Layer
-from keras.layers import regularizers, initializers
+from keras import regularizers, initializers
 import keras.backend as K
 
 
@@ -34,7 +34,7 @@ class MoGLayer(Layer):
 
     def call(self, inputs):
         output = inputs * self.std
-        output = K.bias_add(output, self.mean)
+        output = output + self.mean
         return output
 
     def compute_output_shape(self, input_shape):
